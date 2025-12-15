@@ -81,7 +81,8 @@ export class FunctionCallingLlmClient {
 
   constructor() {
     this.client = new OpenAI({
-      apiKey: process.env.OPENAI_APIKEY,
+      apiKey: process.env.OLLAMA_API_KEY,
+      baseURL: process.env.OLLAMA_BASE_URL
     });
   }
 
