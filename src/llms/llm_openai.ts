@@ -21,7 +21,7 @@ export class DemoLlmClient {
   constructor() {
     this.client = new OpenAI({
       
-      apiKey: process.env.OLLAMA_API_KEY
+      apiKey: process.env.OLLAMA_API_KEY,
       baseURL: process.env.OLLAMA_BASE_URL
     });
   }
