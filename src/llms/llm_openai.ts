@@ -20,8 +20,9 @@ export class DemoLlmClient {
 
   constructor() {
     this.client = new OpenAI({
-      apiKey: process.env.OPENAI_APIKEY,
-      organization: process.env.OPENAI_ORGANIZATION_ID,
+      
+      apiKey: process.env.OLLAMA_API_KEY
+      baseURL: process.env.OLLAMA_BASE_URL
     });
   }
 
@@ -89,7 +90,7 @@ export class DemoLlmClient {
 
     try {
       const events = await this.client.chat.completions.create({
-        model: "gpt-3.5-turbo-1106",
+        model: "gpt-oss:20b",
         messages: requestMessages,
         stream: true,
         temperature: 0.3,
